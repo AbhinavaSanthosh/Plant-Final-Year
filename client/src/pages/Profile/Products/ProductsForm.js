@@ -66,7 +66,7 @@ const ProductsForm = ({
                 response = await EditProduct(selectedProduct._id, value);
             } else {
                 value.seller = user._id;
-                value.status = "pending";
+                value.status = "available";
                 response = await AddProduct(value);
             }
             if (response.success) {
