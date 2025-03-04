@@ -94,7 +94,7 @@ router.get('/search/:key',async(req,res)=>{
     try {
          const response=await ProductModel.find({
             '$or':[
-                {name:{$regex:req.params.key}},
+                {name:{$regex:req.params.key, $options: 'i'}},
             ]
          });
          res.send({

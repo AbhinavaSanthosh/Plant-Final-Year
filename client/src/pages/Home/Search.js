@@ -1,9 +1,9 @@
+import { message } from "antd";
 import { useCallback, useRef } from "react";
 import { GetProductsBysearch } from "../../Apicalls/products";
-import { message } from "antd";
 import Error from "../../components/Error";
 
-const Search = ({setproducts,reloadData}) => {
+const Search = ({setProducts,reloadData}) => {
   
   const inputElem = useRef(null);
   const debounce = (func, wait) => {
@@ -19,7 +19,7 @@ const Search = ({setproducts,reloadData}) => {
       if (value !== "") {
         const response = await GetProductsBysearch(value);
         if (response.success) {
-          setproducts(response.data);
+          setProducts(response.data);
         } else {
           throw new Error("Product not fiilters");
         }
