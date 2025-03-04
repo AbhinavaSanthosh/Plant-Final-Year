@@ -20,7 +20,10 @@ const UserBids = () => {
       });
       dispatch(SetLoader(false));
       if (response.success) {
-        setbidsData(response.data);
+        let data = response.data;
+        data = data.filter((bid) => bid.product !== null);
+        setbidsData(data);
+
       }
     } catch (error) {
       dispatch(SetLoader(false));
@@ -56,7 +59,7 @@ const UserBids = () => {
         render: (text, record) =>{
             return record.product.price;
         }
-      },
+    },
     {
       title: "Bid Amount",
       dataIndex: "bidAmount",

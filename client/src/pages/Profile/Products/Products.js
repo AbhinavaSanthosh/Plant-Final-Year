@@ -68,7 +68,7 @@ const Products = () => {
       dataIndex: "images",
       render: (text, record) => {
         return (
-          <img src={record?.images?.length > 0 ? record.images[0] : ""} alt="productimg" className="h-20 w-20 object-cover rounded-md" />
+          <img key={record._id} src={record?.images?.length > 0 ? record.images[0] : ""} alt="productimg" className="h-20 w-20 object-cover rounded-md" />
         )
       }
     },
