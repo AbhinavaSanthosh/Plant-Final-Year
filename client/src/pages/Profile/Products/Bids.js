@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAllBids, updateProductStatus } from "../../../Apicalls/products";
 import { SetLoader } from "../../../redux/LoadersSlice";
+import { AddNotification } from "../../../Apicalls/notification";
 
 const Bids = ({ showBidsModel, setshowBidsModel, selectedProduct, getData }) => {
   const [bidsData, setbidsData] = useState([]);
@@ -33,6 +34,13 @@ const Bids = ({ showBidsModel, setshowBidsModel, selectedProduct, getData }) => 
       
       dispatch(SetLoader(true));
       const response = await updateProductStatus(selectedProduct._id, 'sold');
+      await AddNotification({
+        title:"Product Sold to you",
+        message:`${bid.seller.name} accepted your Bid and sold the ${bid.product.name} to you for amount ${bid.bidAmount}`,
+        user:bid.buyer._id,
+        onClick:'/profile',
+        read:false
+      })
       dispatch(SetLoader(false));
       if(response.success){
         message.success('Product Sold');

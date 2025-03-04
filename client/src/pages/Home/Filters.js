@@ -28,7 +28,7 @@ const Filters = ({ showFilters, setShowFilters, filters, setFilters }) => {
     const [filteredLocations, setFilteredLocations] = useState(locations);
 
     return (
-        <div className="w-80 bg-[rgba(218,220,221,0.65)] shadow-lg rounded-lg p-5">
+        <div className="w-80 h-fit sticky top-5 bg-[rgba(218,220,221,0.65)] shadow-lg rounded-lg p-5">
             {/* Header */}
             <div className="flex justify-between items-center mb-5">
                 <h1 className="text-xl font-semibold text-gray-800">Filters</h1>
@@ -42,7 +42,7 @@ const Filters = ({ showFilters, setShowFilters, filters, setFilters }) => {
             {/* Categories Dropdown */}
             <div className="mb-5">
                 <div
-                    className="flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50"
+                    className={`flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50 ${showCategoryDropdown ? "bg-gray-200" : ""}`}
                     onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
                 >
                     <h1 className="text-sm font-medium text-gray-700">Categories</h1>
@@ -80,7 +80,7 @@ const Filters = ({ showFilters, setShowFilters, filters, setFilters }) => {
             {/* Ages Dropdown */}
             <div className="mb-5">
                 <div
-                    className="flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50"
+                    className={`flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50 ${showAgeDropdown ? "bg-gray-200" : ""}`}
                     onClick={() => setShowAgeDropdown(!showAgeDropdown)}
                 >
                     <h1 className="text-sm font-medium text-gray-700">Ages</h1>
@@ -118,7 +118,7 @@ const Filters = ({ showFilters, setShowFilters, filters, setFilters }) => {
             {/* Locations Dropdown */}
             <div className="mb-5">
                 <div
-                    className="flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50"
+                    className={`flex justify-between items-center cursor-pointer p-2 rounded-lg hover:bg-gray-50 ${showLocationDropdown ? "bg-gray-200" : ""}`}
                     onClick={() => setShowLocationDropdown(!showLocationDropdown)}
                 >
                     <h1 className="text-sm font-medium text-gray-700">Locations</h1>

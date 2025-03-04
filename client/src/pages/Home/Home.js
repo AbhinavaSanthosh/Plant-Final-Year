@@ -57,7 +57,7 @@ const Home = () => {
     return (
         <div className="relative min-h-screen">
             {/* Background Video */}
-            <div className="absolute -z-50">
+            {/* <div className="absolute -z-50">
                 <video
                     autoPlay
                     loop
@@ -67,7 +67,7 @@ const Home = () => {
                 >
                     <source src={bgVideo} type="video/mp4" />
                 </video>
-            </div>
+            </div> */}
 
             {/* Overlay to Improve Readability */}
             <div className="absolute inset-0 bg-black opacity-40 -z-40"></div>

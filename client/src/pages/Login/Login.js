@@ -55,7 +55,7 @@ const Login = () => {
           </FormItem>
 
           <FormItem label="Password" name="password" rules={rules}>
-            <Input placeholder="Enter your password here.." />
+            <Input type="password" placeholder="Enter your password here.." />
           </FormItem>
 
           <Button type="primary" htmlType="submit" block className="mt-2" style={{backgroundColor:'#203A43'}}>
